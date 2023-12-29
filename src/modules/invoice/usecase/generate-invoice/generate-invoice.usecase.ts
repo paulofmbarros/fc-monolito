@@ -3,13 +3,14 @@ import Id from "../../../@shared/domain/value-object/id.value-object";
 import UseCaseInterface from "../../../@shared/usecase/use-case.interface";
 import InvoiceItem from "../../domain/invoice-items.entity";
 import Invoice from "../../domain/invoice.entity";
+import InvoiceGateway from "../../gateway/invoice.gateway";
 import InvoiceRepository from "../../repository/invoice.repository";
 import { GenerateInvoiceUseCaseInputDto, GenerateInvoiceUseCaseOutputDto } from "./generate-invoice.dto";
 
 export default class GenerateInvoiceUseCase implements UseCaseInterface {
-    private _invoiceRepository: InvoiceRepository;
+    private _invoiceRepository: InvoiceGateway;
     
-    constructor(_invoiceRepository: InvoiceRepository) {
+    constructor(_invoiceRepository: InvoiceGateway) {
         this._invoiceRepository = _invoiceRepository;
     }
    async execute(input: GenerateInvoiceUseCaseInputDto): Promise<GenerateInvoiceUseCaseOutputDto> {
