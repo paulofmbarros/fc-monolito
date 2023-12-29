@@ -41,8 +41,8 @@ export default class InvoiceRepository implements InvoiceGateway {
           });
     }
     
-   async generate(invoice: Invoice): Promise<void> {
-    await InvoiceModel.create({
+   async generate(invoice: Invoice): Promise<Invoice> {
+   var invoiceModel = await InvoiceModel.create({
         id: invoice.id.id,
         name: invoice.name,
         document: invoice.document,
@@ -67,5 +67,27 @@ export default class InvoiceRepository implements InvoiceGateway {
       }
       );
   
+      return new Invoice({
+        id: new Id(invoiceModel.id),
+        name: invoiceModel.name,
+        document: invoiceModel.document,
+        address: new Address(
+            invoiceModel.street,
+            invoiceModel.number,
+            invoiceModel.complement,
+            invoiceModel.city,
+            invoiceModel.state,
+            invoiceModel.zipcode,
+        ),
+        items: invoiceModel.items.map((item) => {
+            return new InvoiceItem({
+                id: new Id(item.id),
+                name: item.name,
+                price: item.price,
+            });
+        }),
+        createdAt: invoiceModel.createdAt,
+        updatedAt: invoiceModel.updatedAt,
+      });
     };
 }
