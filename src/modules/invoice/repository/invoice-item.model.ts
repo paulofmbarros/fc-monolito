@@ -19,9 +19,9 @@ export class InvoiceItemModel extends Model{
 
     @ForeignKey(() => InvoiceModel)
     @Column({ allowNull: false})
-    declare invoice_id: string;
+    invoice_id: string;
 
     @BelongsTo(() => InvoiceModel)
-    declare invoice: InvoiceModel;
+    invoice: InvoiceModel;
 
 }

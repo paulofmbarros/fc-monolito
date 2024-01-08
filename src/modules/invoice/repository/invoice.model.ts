@@ -18,25 +18,25 @@ export class InvoiceModel extends Model{
     document: string
 
     @HasMany(() => InvoiceItemModel)
-    declare items: InvoiceItemModel[];
+    items: InvoiceItemModel[];
 
     @Column({ allowNull: false})
-    declare street: string;
+    street: string;
 
     @Column({ allowNull: false})
-    declare number: string;
+    number: string;
 
     @Column({ allowNull: false})
-    declare complement: string;
+    complement: string;
 
     @Column({ allowNull: false})
-    declare zipcode: string;
+    zipcode: string;
 
     @Column({ allowNull: false})
-    declare city: string;
+    city: string;
 
     @Column({ allowNull: false})
-    declare state: string;
+    state: string;
 
     @Column({ allowNull: false })
     createdAt: Date
