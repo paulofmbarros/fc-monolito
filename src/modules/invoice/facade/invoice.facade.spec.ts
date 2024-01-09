@@ -1,7 +1,7 @@
 
 import { Sequelize } from "sequelize-typescript";
-import { InvoiceModel } from "../repository/invoice.model";
-import { InvoiceItemModel } from "../repository/invoice-item.model";
+import  InvoiceModel  from "../repository/invoice.model";
+import  InvoiceItemModel  from "../repository/invoice-item.model";
 import InvoiceFacadeFactory from "../factory/facade.factory";
 import { GenerateInvoiceFacadeInputDTO } from "./invoice.facade.interface";
 

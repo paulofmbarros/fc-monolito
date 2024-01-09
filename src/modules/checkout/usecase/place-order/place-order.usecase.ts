@@ -22,7 +22,7 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
     private _paymentFacade: PaymentFacadeInterface;
 
     constructor(clientFacade: ClientAdmFacadeInterface,
-         productFacade: ProductAdmFacadeInterface,
+        productFacade: ProductAdmFacadeInterface,
         catalogFacade: CatalogAdmFacadeInterface,
         repository: ChekcoutGateway,
         invoiceFacade: InvoiceFacadeInterface,
@@ -54,7 +54,15 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
             id: new Id(client.id),
             name: client.name,
             email: client.email,
-            address: client.address !== undefined ? client.address.street : ""
+            document: client.document,
+            street: client.address.street,
+            number: client.address.number,
+            complement: client.address.complement,
+            city: client.address.city,
+            state: client.address.state,
+            zipCode: client.address.zipCode,
+            createdAt: client.createdAt,
+            updatedAt: client.updatedAt
         });
 
         const order = new Order({
@@ -85,9 +93,6 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
 
         payment.status === 'approved' && order.approved();
         this._repository.addOrder(order);
-
-        
-    
     
         return {
             id: order.id.id,
