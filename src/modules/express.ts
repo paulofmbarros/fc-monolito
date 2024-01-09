@@ -31,7 +31,15 @@ export let sequelize: Sequelize;
       logging: false,
       sync: { force: true }
     });
-    await sequelize.addModels([ClientModel, ProductModel, InvoiceModel, InvoiceItemModel, OrderModel, OrderClientModel, TransactionModel, AdmProductModel, StoreProductModel]);
+    await sequelize.addModels([OrderModel,
+      ClientModel,
+      OrderClientModel,
+      TransactionModel,
+      StoreProductModel,
+      InvoiceItemModel,
+      InvoiceModel,
+      ProductModel,
+      AdmProductModel]);
   
     await sequelize.sync();
   }

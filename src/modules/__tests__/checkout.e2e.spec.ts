@@ -27,17 +27,15 @@ describe("Checkout E2E tests", () => {
             sync: { force: true },
           });
       
-          sequelize.addModels([
+          sequelize.addModels([OrderModel,
             ClientModel,
-            ProductModel,
-            InvoiceModel,
-            InvoiceItemModel,
-            OrderModel,
             OrderClientModel,
             TransactionModel,
-            AdmProductModel,
             StoreProductModel,
-          ]);
+            InvoiceItemModel,
+            InvoiceModel,
+            ProductModel,
+            AdmProductModel]);
       
           await sequelize.sync({ force: true });
       });
@@ -93,6 +91,7 @@ describe("Checkout E2E tests", () => {
           id: "1",
           name: "test",
           description: "test",
+          stock: 10,
           salesPrice: 100,
           createdAt: new Date(),
           updatedAt: new Date(),
