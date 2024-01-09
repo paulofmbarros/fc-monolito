@@ -1,5 +1,5 @@
-import ClientRepository from "../client-adm/repository/client.repository";
-import AddClientUseCase from "../client-adm/usecase/add-client/add-client.usecase";
+import ClientRepository from "../../modules/client-adm/repository/client.repository";
+import AddClientUseCase from "../../modules/client-adm/usecase/add-client/add-client.usecase";
 import express, { Request, Response } from "express";
 
 

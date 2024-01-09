@@ -2,19 +2,19 @@
 import { app, sequelize } from "../express";
 import request from "supertest";
 import { Sequelize } from "sequelize-typescript";
-import  InvoiceModel  from "../invoice/repository/invoice.model";
-import  ProductModel  from "../checkout/repository/product.model";
-import OrderModel from "../checkout/repository/order.model";
-import  ClientModel  from "../client-adm/repository/client.model";
-import InvoiceItemModel from '../invoice/repository/invoice-item.model';
-import { default as OrderClientModel } from "../checkout/repository/client.model";
-import TransactionModel from "../payment/repository/transaction.model";
-import { default as AdmProductModel } from "../product-adm/repository/product.model";
-import { default as StoreProductModel } from "../store-catalog/repository/product.model";
-import Id from "../@shared/domain/value-object/id.value-object";
-import * as CheckStockUseCase from "../product-adm/usecase/check-stock/check-stock.usecase";
-import * as GenerateInvoiceUseCase from "../invoice/usecase/generate-invoice/generate-invoice.usecase";
-import * as CheckoutRepository from "../checkout/repository/checkout.repository";
+import  InvoiceModel  from "../../modules/invoice/repository/invoice.model";
+import  ProductModel  from "../../modules/checkout/repository/product.model";
+import OrderModel from "../../modules/checkout/repository/order.model";
+import  ClientModel  from "../../modules/client-adm/repository/client.model";
+import InvoiceItemModel from '../../modules/invoice/repository/invoice-item.model';
+import { default as OrderClientModel } from "../../modules/checkout/repository/client.model";
+import TransactionModel from "../../modules/payment/repository/transaction.model";
+import { default as AdmProductModel } from "../../modules/product-adm/repository/product.model";
+import { default as StoreProductModel } from "../../modules/store-catalog/repository/product.model";
+import Id from "../../modules/@shared/domain/value-object/id.value-object";
+import * as CheckStockUseCase from "../../modules/product-adm/usecase/check-stock/check-stock.usecase";
+import * as GenerateInvoiceUseCase from "../../modules/invoice/usecase/generate-invoice/generate-invoice.usecase";
+import * as CheckoutRepository from "../../modules/checkout/repository/checkout.repository";
 
 
 describe("Checkout E2E tests", () => {

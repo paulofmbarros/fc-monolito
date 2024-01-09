@@ -1,12 +1,12 @@
 import express, { Request, Response } from "express";
-import PlaceOrderUseCase from "../checkout/usecase/place-order/place-order.usecase";
-import ProductAdmFacade from "../product-adm/facade/product-adm.facade";
-import ProductAdmFacadeFactory from "../product-adm/factory/facade.factory";
-import ClientAdmFacadeFactory from "../client-adm/factory/client-adm.facade.factory";
-import StoreCatalogFacadeFactory from "../store-catalog/factory/facade.factory";
-import InvoiceFacadeFactory from "../invoice/factory/facade.factory";
-import PaymentFacadeFactory from "../payment/factory/payment.facade.factory";
-import CheckoutRepository from "../checkout/repository/checkout.repository";
+import PlaceOrderUseCase from "../../modules/checkout/usecase/place-order/place-order.usecase";
+import ProductAdmFacade from "../../modules/product-adm/facade/product-adm.facade";
+import ProductAdmFacadeFactory from "../../modules/product-adm/factory/facade.factory";
+import ClientAdmFacadeFactory from "../../modules/client-adm/factory/client-adm.facade.factory";
+import StoreCatalogFacadeFactory from "../../modules/store-catalog/factory/facade.factory";
+import InvoiceFacadeFactory from "../../modules/invoice/factory/facade.factory";
+import PaymentFacadeFactory from "../../modules/payment/factory/payment.facade.factory";
+import CheckoutRepository from "../../modules/checkout/repository/checkout.repository";
 
 export const checkoutRoute = express.Router();
 

@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
-import ProductAdmAddProductUseCase  from "../product-adm/usecase/add-product/add-product.usecase";
-import ProductRepository from "../product-adm/repository/product.repository";
+import ProductAdmAddProductUseCase  from "../../modules/product-adm/usecase/add-product/add-product.usecase";
+import ProductRepository from "../../modules/product-adm/repository/product.repository";
 
 
 export const productRoute = express.Router();
